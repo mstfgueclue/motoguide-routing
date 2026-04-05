@@ -1,0 +1,23 @@
+graphhopper:
+  datareader.file: data/austria-260116.osm.pbf
+  graph.location: data/graph-cache
+  graph.encoded_values: surface
+
+  import.osm.ignored_highways: motorway,trunk
+
+  elevation.provider: srtm
+  elevation.dataaccess: MMAP
+
+  profiles:
+    - name: motorcycle
+      vehicle: car
+      weighting: custom
+      custom_model_files:
+        - motorcycle_custom.json
+
+  custom_model_folder: custom-models
+
+server:
+  application_connectors:
+    - type: http
+      port: 8989
