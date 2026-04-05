@@ -13,7 +13,7 @@ graphhopper:
       vehicle: car
       weighting: custom
       custom_model_files:
-        - motorcycle_custom.json
+        - motorcycle_default.json
 
   custom_model_folder: custom-models
 
