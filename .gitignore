@@ -48,3 +48,5 @@ tmp/
 
 # Routing/map datasets
 *.osm.pbf
+graph-cache/
+*.jar
