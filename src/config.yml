@@ -1,12 +1,13 @@
 graphhopper:
   datareader.file: data/austria-260116.osm.pbf
   graph.location: data/graph-cache
-  graph.encoded_values: surface
+  graph.encoded_values: surface,smoothness,roundabout
 
   import.osm.ignored_highways: motorway,trunk
 
-  elevation.provider: srtm
-  elevation.dataaccess: MMAP
+  graph.elevation.provider: srtm
+  graph.elevation.dataaccess: MMAP
+  graph.elevation.cache_dir: data/elevation-cache
 
   profiles:
     - name: motorcycle
@@ -14,6 +15,30 @@ graphhopper:
       weighting: custom
       custom_model_files:
         - motorcycle_default.json
+
+    - name: balanced
+      vehicle: car
+      weighting: custom
+      custom_model_files:
+        - motorcycle_balanced.json
+
+    - name: curvy
+      vehicle: car
+      weighting: custom
+      custom_model_files:
+        - motorcycle_curvy.json
+
+    - name: mountain
+      vehicle: car
+      weighting: custom
+      custom_model_files:
+        - motorcycle_mountain.json
+
+    - name: lowland
+      vehicle: car
+      weighting: custom
+      custom_model_files:
+        - motorcycle_lowland.json
 
   custom_model_folder: custom-models
 
