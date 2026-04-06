@@ -9,4 +9,4 @@ RUN wget https://repo1.maven.org/maven2/com/graphhopper/graphhopper-web/8.0/grap
 COPY . .
 
 EXPOSE 8989
-CMD ["java","-Xmx2g","-jar","graphhopper.jar","server","config.yml"]
+CMD ["java","-Xmx1400m","-XX:+UseSerialGC","-jar","graphhopper.jar","server","config.yml"]

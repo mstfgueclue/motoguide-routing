@@ -1,6 +1,7 @@
 graphhopper:
   datareader.file: data/austria-260116.osm.pbf
   graph.location: data/graph-cache
+  graph.dataaccess: MMAP
   graph.encoded_values: surface,smoothness,roundabout
 
   import.osm.ignored_highways: motorway,trunk
