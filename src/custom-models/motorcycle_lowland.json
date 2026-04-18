@@ -1,17 +1,21 @@
 {
-  "distance_influence": 75.0,
+  "distance_influence": 85.0,
   "speed": [
-    { "if": "true", "multiply_by": "0.98 * car_average_speed" },
+    { "if": "true", "multiply_by": "1.0 * car_average_speed" },
     { "if": "true", "limit_to": 120 },
-    { "if": "smoothness == BAD || smoothness == VERY_BAD", "limit_to": 50 },
-    { "if": "surface == GRAVEL || surface == GROUND || surface == DIRT || surface == SAND || surface == UNPAVED || surface == GRASS", "limit_to": 40 }
+    { "if": "smoothness == BAD || smoothness == VERY_BAD", "limit_to": 48 },
+    { "if": "surface == GRAVEL || surface == GROUND || surface == DIRT || surface == SAND || surface == UNPAVED || surface == GRASS", "limit_to": 35 }
   ],
   "priority": [
     { "if": "!car_access", "multiply_by": 0 },
     { "if": "road_access == PRIVATE", "multiply_by": 0 },
-    { "if": "road_class == MOTORWAY || road_class == TRUNK", "multiply_by": 0.02 },
-    { "if": "road_class == PRIMARY || road_class == SECONDARY", "multiply_by": 1.15 },
-    { "if": "road_class == TERTIARY || road_class == UNCLASSIFIED", "multiply_by": 0.95 },
-    { "if": "surface == ASPHALT || surface == PAVED", "multiply_by": 1.08 }
+    { "if": "road_class == MOTORWAY || road_class == TRUNK", "multiply_by": 0.05 },
+    { "if": "road_class == PRIMARY", "multiply_by": 1.22 },
+    { "if": "road_class == SECONDARY", "multiply_by": 1.18 },
+    { "if": "road_class == TERTIARY || road_class == UNCLASSIFIED", "multiply_by": 0.82 },
+    { "if": "roundabout", "multiply_by": 0.7 },
+    { "if": "surface == ASPHALT || surface == PAVED", "multiply_by": 1.15 },
+    { "if": "smoothness == BAD || smoothness == VERY_BAD", "multiply_by": 0.6 },
+    { "if": "surface == GRAVEL || surface == GROUND || surface == DIRT || surface == SAND || surface == UNPAVED || surface == GRASS", "multiply_by": 0.5 }
   ]
 }
