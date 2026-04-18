@@ -17,12 +17,6 @@ graphhopper:
       custom_model_files:
         - motorcycle_default.json
 
-    - name: balanced
-      vehicle: car
-      weighting: custom
-      custom_model_files:
-        - motorcycle_balanced.json
-
     - name: curvy
       vehicle: car
       weighting: custom
